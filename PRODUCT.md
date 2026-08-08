@@ -24,8 +24,12 @@ No Tour or Contact sections by design. No forms, no server-side logic, no CMS �
 ## Brand Commitments
 Artist name: Rollen. No confirmed logo, photography, bio copy, or streaming/social links yet — the user will provide real assets and copy in a follow-up. Do not fabricate testimonials, press quotes, release dates, or specific streaming/social URLs; use clearly marked placeholders until real content is supplied.
 
+Cats are a recurring visual/thematic motif across every Rollen album — a confirmed, durable brand element. Any visual system for this artist should find a genuine, non-cartoonish way to include cats rather than treating the request as decorative flourish. The artist's own chosen portrait image (see Evidence on Hand) is itself a stylized cat portrait — this is the artist's real visual identity, not a design placeholder.
+
 ## Evidence on Hand
-None yet. No bio text, photos, logo, streaming links, or social handles exist in the project. Placeholder content currently in Hero/Music/Bio/Socials components is scaffold only, not real copy.
+Real bio copy is in place (Bio.tsx), user-supplied and lightly polished in tone to match the page's voice, split across the two Bio tablets. Real Hero tagline: "Finding my way back, one song at a time." Real Spotify (`open.spotify.com/artist/6KyeHDC5TiAoMHMjkQrRY5`) and YouTube Music (`music.youtube.com/channel/UCyFkg91_hvOHa5ta9g0g5LA`) links are wired into the Hero "Listen" mark, the Music listing board, and the Follow niches — these are the only two platforms the artist currently has. Apple Music, Bandcamp, Instagram, and TikTok entries were removed from the Music and Follow lists rather than shown as placeholders, since the user doesn't have those accounts yet; add them back in when real accounts/links exist.
+
+A real artist portrait is in place at `public/images/rollen-portrait.jpg` (1024x1024) and used as the Hero centerpiece: a full-color, ornately gilt-framed painting of a crowned cat figure inside a candlelit cathedral, user-supplied and explicitly confirmed to stay full color rather than desaturated to match the rest of the page. This is the page's one deliberate exception to the otherwise-strict monochrome system (see DESIGN.md's Portrait Exception rule) — do not desaturate it or add further color elsewhere to "match" it.
 
 ## Product Principles
 - The visual world must feel like an authentic extension of dark/gothic alternative music, not a costume — realism and atmosphere over cartoonish or generic "spooky" tropes.
