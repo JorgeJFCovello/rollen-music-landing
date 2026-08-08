@@ -23,11 +23,11 @@ export default function Bio() {
           <Mullion className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-4 -translate-x-1/2 text-stone-dim/70 sm:block" />
 
           <Reveal variant="tilt-left">
-            <div className="stone-panel relative px-8 py-10 sm:px-10 sm:py-12">
-              <CatSilhouette className="pointer-events-none absolute -top-5 right-8 h-8 w-auto text-ink/25 sm:h-9" />
+            <div className="stone-panel relative overflow-hidden px-8 py-10 sm:px-10 sm:py-12">
+              <CatSilhouette className="pointer-events-none absolute right-6 top-4 h-8 w-auto text-ink/25 sm:right-8 sm:h-9" />
               <CoffeeStain
                 id="bio-stain-1"
-                className="pointer-events-none absolute -bottom-4 -right-4 h-32 w-32 rotate-[8deg] mix-blend-multiply sm:h-36 sm:w-36"
+                className="pointer-events-none absolute -bottom-2 -right-2 h-32 w-32 rotate-[8deg] mix-blend-multiply sm:h-36 sm:w-36"
               />
               <p
                 className="font-[family-name:var(--font-body)] text-[1.05rem] leading-[2] text-ink/80 sm:text-lg"
@@ -46,10 +46,16 @@ export default function Bio() {
           </Reveal>
 
           <Reveal variant="tilt-right" delay={150}>
-            <div className="stone-panel relative px-8 py-10 sm:px-10 sm:py-12">
+            <div className="stone-panel relative overflow-hidden px-8 py-10 sm:px-10 sm:py-12">
               <CoffeeStain
                 id="bio-stain-2"
-                className="pointer-events-none absolute -left-4 -top-4 h-28 w-28 -rotate-[12deg] mix-blend-multiply sm:h-32 sm:w-32"
+                variant="b"
+                className="pointer-events-none absolute -left-2 -top-6 h-28 w-28 -rotate-[12deg] mix-blend-multiply sm:h-32 sm:w-32"
+              />
+              <CoffeeStain
+                id="bio-stain-3"
+                variant="c"
+                className="pointer-events-none absolute right-2 top-1/2 h-24 w-24 -translate-y-1/2 rotate-[4deg] mix-blend-multiply sm:right-4 sm:h-28 sm:w-28"
               />
               <p
                 className="font-[family-name:var(--font-body)] text-[1.05rem] leading-[2] text-ink/80 sm:text-lg"
