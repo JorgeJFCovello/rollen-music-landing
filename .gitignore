@@ -407,6 +407,12 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
+# Next.js
+.next/
+out/
+next-env.d.ts
+.vercel
+
 # VS Code files for those working on multiple tools
 .vscode/*
 !.vscode/settings.json
