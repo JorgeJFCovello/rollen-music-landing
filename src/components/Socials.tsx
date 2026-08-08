@@ -16,11 +16,13 @@ export default function Socials() {
   return (
     <section id="socials" className="relative overflow-hidden px-6 py-24 pb-32 sm:py-28 sm:pb-36">
       <Tracery className="pointer-events-none absolute left-[-18%] top-[-4%] h-[125%] w-[44%] text-stone/[0.045] sm:left-[-4%] sm:w-[20%]" />
-      <div className="relative mx-auto max-w-2xl text-center">
-        <h2 className="font-[family-name:var(--font-display)] text-4xl italic text-stone sm:text-5xl">
-          Follow
-        </h2>
-        <Quatrefoil className="mx-auto mt-6 h-8 w-8 text-stone-dim/60" />
+      <div className="relative mx-auto max-w-3xl text-center">
+        <div className="flex items-center justify-center gap-4">
+          <Quatrefoil className="h-6 w-6 text-stone-dim/50" />
+          <h2 className="font-[family-name:var(--font-display)] text-4xl italic text-stone sm:text-5xl">
+            Follow
+          </h2>
+        </div>
 
         <ul className="mt-14 flex flex-wrap justify-center gap-6 sm:gap-8">
           {socials.map((social, i) => (

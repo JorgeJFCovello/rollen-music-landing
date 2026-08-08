@@ -2,6 +2,84 @@ import type { CSSProperties } from "react";
 
 type SvgProps = { className?: string; style?: CSSProperties };
 
+/**
+ * An irregular watercolor-style coffee stain: a mottled, feathered blot with a darker
+ * off-center core, a dripping bottom edge, and a few scattered splatter dots. The one
+ * deliberately warm-toned mark in an otherwise monochrome system, per explicit request.
+ * `id` must be unique per instance — it seeds the local filter defs.
+ */
+export function CoffeeStain({ id, className, style }: SvgProps & { id: string }) {
+  const bleed = `${id}-bleed`;
+  const grain = `${id}-grain`;
+  return (
+    <svg viewBox="0 0 240 240" className={className} style={style} aria-hidden="true">
+      <defs>
+        <filter id={bleed} x="-30%" y="-30%" width="160%" height="160%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="2" seed="6" result="n" />
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="14" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id={grain} x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.11" numOctaves="3" seed="4" result="g" />
+          <feColorMatrix
+            in="g"
+            type="matrix"
+            values="0 0 0 0 0.32  0 0 0 0 0.18  0 0 0 0 0.08  0 0 0 0.55 0"
+            result="gc"
+          />
+          <feComposite in="gc" in2="SourceAlpha" operator="in" result="gm" />
+          <feMerge>
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="gm" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <g filter={`url(#${bleed})`}>
+        <g filter={`url(#${grain})`}>
+          {/* outermost, lightest wash */}
+          <path
+            fill="rgba(150, 105, 60, 0.22)"
+            d="M80,30 C110,18 145,22 168,40 C190,56 198,78 192,100 C210,110 214,132 200,148
+               C212,164 204,184 186,190 C190,206 178,220 162,218 C158,232 144,238 132,228
+               C120,240 106,232 100,220 C86,226 76,214 78,200 C62,202 52,190 56,176
+               C42,174 34,160 42,146 C28,140 24,124 36,114 C24,104 30,88 44,84
+               C38,70 48,56 64,54 C62,40 70,32 80,30 Z"
+          />
+          {/* mid wash, offset up-left */}
+          <path
+            fill="rgba(120, 75, 35, 0.32)"
+            d="M78,54 C100,44 126,46 142,60 C160,74 166,92 158,108 C172,116 174,132 162,142
+               C168,154 160,168 146,170 C144,182 132,188 120,182 C110,192 96,188 92,176
+               C78,178 68,168 70,156 C58,152 54,138 62,128 C52,120 52,106 64,98
+               C58,86 64,72 78,68 C74,60 74,56 78,54 Z"
+          />
+          {/* darkest core, where the grounds settled */}
+          <path
+            fill="rgba(80, 45, 20, 0.48)"
+            d="M88,72 C102,64 118,66 126,78 C136,88 134,102 122,108 C126,118 118,128 106,126
+               C100,134 88,130 86,120 C76,120 72,108 80,100 C74,92 78,80 88,72 Z"
+          />
+          {/* drips trailing off the bottom edge */}
+          <path
+            fill="rgba(120, 75, 35, 0.3)"
+            d="M96,214 C94,224 92,234 96,242 C100,248 106,246 106,238 C106,228 102,218 96,214 Z"
+          />
+          <path
+            fill="rgba(120, 75, 35, 0.26)"
+            d="M150,212 C152,222 156,230 152,238 C148,244 142,240 142,232 C142,224 146,216 150,212 Z"
+          />
+        </g>
+      </g>
+
+      {/* scattered splatter, outside the bleed filter so the dots stay crisp */}
+      <circle cx="190" cy="40" r="3.2" fill="rgba(120, 75, 35, 0.3)" />
+      <circle cx="205" cy="53" r="2" fill="rgba(120, 75, 35, 0.24)" />
+      <circle cx="197" cy="65" r="1.6" fill="rgba(120, 75, 35, 0.2)" />
+      <circle cx="176" cy="28" r="2.4" fill="rgba(120, 75, 35, 0.22)" />
+    </svg>
+  );
+}
+
 /** Gothic window tracery — nested pointed arches and a rose piercing, in the manner of a cathedral bay. */
 export function Tracery({ className }: SvgProps) {
   return (

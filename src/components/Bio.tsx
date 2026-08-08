@@ -1,4 +1,4 @@
-import { CatSilhouette, Mullion, Quatrefoil, Tracery } from "./ornaments";
+import { CatSilhouette, CoffeeStain, Mullion, Quatrefoil, Tracery } from "./ornaments";
 import { Reveal } from "./Reveal";
 
 const ruledText = {
@@ -12,10 +12,12 @@ export default function Bio() {
     <section id="bio" className="relative overflow-hidden px-6 py-24 sm:py-28">
       <Tracery className="pointer-events-none absolute right-[-16%] top-[-6%] h-[130%] w-[42%] -scale-x-100 text-stone/[0.05] sm:right-[-6%] sm:w-[22%]" />
       <div className="relative mx-auto max-w-3xl">
-        <h2 className="font-[family-name:var(--font-display)] text-4xl italic text-stone sm:text-5xl">
-          Bio
-        </h2>
-        <Quatrefoil className="mt-6 h-8 w-8 text-stone-dim/60" />
+        <div className="flex items-center gap-4">
+          <Quatrefoil className="h-6 w-6 text-stone-dim/50" />
+          <h2 className="font-[family-name:var(--font-display)] text-4xl italic text-stone sm:text-5xl">
+            Bio
+          </h2>
+        </div>
 
         <div className="relative mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12">
           <Mullion className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-4 -translate-x-1/2 text-stone-dim/70 sm:block" />
@@ -23,6 +25,10 @@ export default function Bio() {
           <Reveal variant="tilt-left">
             <div className="stone-panel relative px-8 py-10 sm:px-10 sm:py-12">
               <CatSilhouette className="pointer-events-none absolute -top-5 right-8 h-8 w-auto text-ink/25 sm:h-9" />
+              <CoffeeStain
+                id="bio-stain-1"
+                className="pointer-events-none absolute -bottom-4 -right-4 h-32 w-32 rotate-[8deg] mix-blend-multiply sm:h-36 sm:w-36"
+              />
               <p
                 className="font-[family-name:var(--font-body)] text-[1.05rem] leading-[2] text-ink/80 sm:text-lg"
                 style={ruledText}
@@ -41,6 +47,10 @@ export default function Bio() {
 
           <Reveal variant="tilt-right" delay={150}>
             <div className="stone-panel relative px-8 py-10 sm:px-10 sm:py-12">
+              <CoffeeStain
+                id="bio-stain-2"
+                className="pointer-events-none absolute -left-4 -top-4 h-28 w-28 -rotate-[12deg] mix-blend-multiply sm:h-32 sm:w-32"
+              />
               <p
                 className="font-[family-name:var(--font-body)] text-[1.05rem] leading-[2] text-ink/80 sm:text-lg"
                 style={ruledText}

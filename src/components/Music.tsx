@@ -16,11 +16,13 @@ export default function Music() {
   return (
     <section id="music" className="relative overflow-hidden px-6 py-24 sm:py-28">
       <Tracery className="pointer-events-none absolute left-[-16%] top-[-8%] h-[130%] w-[42%] text-stone/[0.05] sm:left-[-6%] sm:w-[22%]" />
-      <div className="relative mx-auto max-w-2xl">
-        <h2 className="font-[family-name:var(--font-display)] text-4xl italic text-stone sm:text-5xl">
-          Music
-        </h2>
-        <Quatrefoil className="mt-6 h-8 w-8 text-stone-dim/60" />
+      <div className="relative mx-auto max-w-3xl">
+        <div className="flex items-center gap-4">
+          <Quatrefoil className="h-6 w-6 text-stone-dim/50" />
+          <h2 className="font-[family-name:var(--font-display)] text-4xl italic text-stone sm:text-5xl">
+            Music
+          </h2>
+        </div>
 
         <Reveal variant="rise">
           <div className="listing-board relative mt-10 px-5 py-8 sm:px-8 sm:py-10">
